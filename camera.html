@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enhanced Camera Access</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Scanning line animation */
+        .scanner-line {
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: rgba(0, 255, 0, 0.7);
+            animation: move 2s infinite;
+        }
+        @keyframes move {
+            0% {
+                top: 0;
+            }
+            100% {
+                top: 100%;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col items-center justify-center h-screen">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Scan with Camera</h1>
+
+    <!-- Camera video container -->
+    <div class="relative w-full max-w-lg bg-gray-800 rounded-lg overflow-hidden shadow-md">
+        <video id="video" class="w-full h-64 object-cover" autoplay></video>
+        <div class="scanner-line"></div> <!-- Scanning line effect -->
+        <div class="absolute bottom-4 left-4 flex space-x-4">
+            <!-- Switch Camera Button -->
+            <button id="switchCamera" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 focus:outline-none">
+                Switch Camera
+            </button>
+
+            <!-- Capture Picture Button -->
+            <button id="capture" class="px-4 py-2 bg-red-500 text-white rounded-lg shadow hover:bg-red-600 focus:outline-none">
+                Capture Picture
+            </button>
+
+            <!-- Access Gallery Button -->
+            <button id="galleryButton" class="px-4 py-2 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 focus:outline-none">
+                Access Gallery
+            </button>
+        </div>
+    </div>
+
+    <!-- Image Preview after capture -->
+    <div id="imagePreview" class="mt-6">
+        <h2 class="text-xl font-bold text-gray-700 mb-4">Captured Image:</h2>
+        <canvas id="canvas" class="border border-gray-500 hidden"></canvas>
+    </div>
+
+    <!-- Hidden input for accessing gallery -->
+    <input type="file" id="galleryInput" accept="image/*" multiple class="hidden">
+
+    <script>
+        let video = document.getElementById('video');
+        let switchCamera = document.getElementById('switchCamera');
+        let captureButton = document.getElementById('capture');
+        let galleryButton = document.getElementById('galleryButton');
+        let galleryInput = document.getElementById('galleryInput');
+        let canvas = document.getElementById('canvas');
+        let imagePreview = document.getElementById('imagePreview');
+        let currentStream = null;
+        let isFrontCamera = false; // Default to back camera
+
+        // Function to stop the current stream
+        function stopStream() {
+            if (currentStream) {
+                currentStream.getTracks().forEach(track => track.stop());
+            }
+        }
+
+        // Function to start the camera stream with facing mode
+        function startCamera(facingMode = 'environment') {
+            if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
+                stopStream();
+                navigator.mediaDevices.getUserMedia({ video: { facingMode } })
+                    .then(function(stream) {
+                        video.srcObject = stream;
+                        currentStream = stream;
+                    })
+                    .catch(function(error) {
+                        console.error('Error accessing the camera: ', error);
+                    });
+            } else {
+                console.error('getUserMedia is not supported in this browser.');
+            }
+        }
+
+        // Start camera with back camera by default
+        startCamera();
+
+        // Event to switch between front and rear cameras
+        switchCamera.addEventListener('click', () => {
+            isFrontCamera = !isFrontCamera;
+            const facingMode = isFrontCamera ? 'user' : 'environment';
+            startCamera(facingMode);
+        });
+
+        // Capture image from video stream
+        captureButton.addEventListener('click', () => {
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            let context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, canvas.width, canvas.height);
+            canvas.classList.remove('hidden'); // Show the captured image
+        });
+
+        // Open gallery when gallery button is clicked
+        galleryButton.addEventListener('click', () => {
+            galleryInput.click();
+        });
+
+        // Handle files selected from the gallery
+        galleryInput.addEventListener('change', (event) => {
+            const files = event.target.files;
+            if (files.length > 0) {
+                console.log('Files selected from gallery:', files);
+            }
+        });
+    </script>
+</body>
+</html>

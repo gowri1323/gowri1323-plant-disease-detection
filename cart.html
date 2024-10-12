@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGuard Online Store</title>
+    <link rel="stylesheet" href="styles.css"> <!-- External stylesheet -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #eef5e9;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+        }
+
+        /* Header Styling */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(60, 124, 70, 0.8);
+            color: white;
+            padding: 10px 0;
+            z-index: 1000;
+            width: 100%;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .header.scrolled {
+            background-color: #3c7c46;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: color 0.3s ease;
+        }
+
+        .header a:hover {
+            color: #a1d3b8;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0;
+            color: #28a745;
+        }
+
+        .product-container {
+            max-width: 3000px;
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .product-card h3 {
+            color: #28a745;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        .product-card p {
+            color: #555;
+            margin: 5px 0;
+        }
+
+        .product-card .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #28a745;
+        }
+
+        .product-card button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product-card button:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 576px) {
+            .header-container {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section -->
+<header class="header" id="header">
+    <div class="header-container">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="service.html">Help Centre</a>
+        <a href="blog.html">Blog</a>
+        <a href="login.html">Login</a>
+    </div>
+</header>
+
+<h1>GreenGuard Online Store</h1>
+
+<!-- Product Container -->
+<div class="product-container">
+    <!-- Product 1 -->
+    <div class="product-card">
+        <img src="./dap.jpg" alt="Fertilizer 1">
+        <h3>DAP Fertilizer And Potash Fertilizer (MOP) </h3>
+        
+        <div class="price">Rs. 189.00</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="./asserts/pro2.webp" alt="Fertilizer 2">
+        <h3>Phosphate Solubilizing Bacteria Bio Fertilizer </h3>
+        
+        <div class="price">Rs.499</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+        <img src="./pro3.webp" alt="Pesticide 3">
+        <h3>Zinc Solubiilizing Bacteria Bio Fertilizer </h3>
+         
+        <div class="price">Rs.499</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+        <img src="./pro4.webp" alt="Pesticide 4">
+        <h3> Sulphur & Iron Bacteria Bio Fertilizer </h3>
+        
+        <div class="price">Rs.499</div>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="./asserts/pro5.webp" alt="Fertilizer 5">
+        <h3>Acetobacter Nitrogen Fixing Bio Fertilizer </h3>
+        <div class="price">Rs.499</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="./pro6.webp" alt="Fertilizer 6">
+        <h3> Calcium Nitrate (Granules) Fertilizer + 18% Calcium  </h3>
+        
+        <div class="price">Rs.279</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+        <img src="./pro7.jpg" alt="Pesticide 7">
+        <h3>Potassium Humate Organic Liquid Fertilizer (900 ML) </h3>
+        <div class="price">Rs.579</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+        <img src="./asserts/pro8.webp" alt="Pesticide 8">
+        <h3>Super Zinc Sulphate Micronutrient Fertilizer (250 gms)</h3>
+        <div class="price">Rs.259</div>
+        <button>Add to Cart</button>
+    </div>
+     <!-- Product 1 -->
+     <div class="product-card">
+        <img src="./asserts/pro9.webp" alt="Fertilizer 9">
+        <h3>Ammonium Sulphate Fertilizer (100 g)100% Water Soluble Fertilizer</h3>
+        <div class="price">Rs.249</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="./asserts/pro10.webp" alt="Fertilizer 10">
+        <h3>Ammonium Sulphate Fertilizer Powder (5 kg Bag) </h3>
+        <div class="price">Rs.999</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+        <img src="./asserts/pro11.webp" alt="Pesticide 11">
+        <h3>
+            Humic Acid & Seaweed Extract Root Food (10 x 250 gms)</h3>
+        <div class="price">Rs.599</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+        <img src="./asserts/pro12.webp" alt="Pesticide 12">
+        <h3>
+            Foliar Liquid Fertilizer- Primary, Secondary & Micro nutrients </h3>
+ 
+        <div class="price">Rs.599</div>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="./asserts/pro13.webp" alt="Fertilizer 13">
+        <h3>IMIDA 30.5 Insecticide </h3>
+        <div class="price">Rs.829</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="./asserts/pro14.webp" alt="Fertilizer 14">
+        <h3>VBM- Bio Insecticide </h3>
+        <div class="price">Rs.1849</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+        <img src="./asserts/pro15.webp" alt="Pesticide 15">
+        <h3> Contact Insecticide </h3>
+        <div class="price">Rs.533</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+
+    <div class="product-card">
+        <img src="./asserts/pro16.webp" alt="Pesticide 16">
+        <h3>Geolife Nano Fe </h3>
+        <div class="price">Rs.180</div>
+        <button>Add to Cart</button>
+    </div>
+     <!-- Product 1 -->
+     <div class="product-card">
+        <img src="./asserts/pro17.webp" alt="Fertilizer 17">
+        <h3>Rose Fertilizer- 850gm </h3>
+        <div class="price">Rs.589</div>
+        <button>Add to Cart</button>
+    </div>
+     <!-- Product 3 -->
+     <div class="product-card">
+        <img src="./asserts/p19.webp" alt="Pesticide 18">
+        <h3>Vermicompost- 850gm </h3>
+        <div class="price">Rs.499</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="./asserts/p18.webp" alt="Fertilizer 19">
+        <h3>Neem Cake Powder Fertilizer </h3>
+        <div class="price">Rs.579</div>
+        <button>Add to Cart</button>
+    </div>
+
+   
+
+    <!-- Product 4 -->
+    <div class="product-card">
+        <img src="./asserts/p20.webp" alt="Pesticide 20">
+        <h3>Amipro-Immunity Booster Nitrogen Supplement </h3>
+        <div class="price">Rs.410</div>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="./asserts/p21.webp" alt="Fertilizer 21">
+        <h3>Retain Humic Acid Granuls|Shiny Granules</h3>
+        <div class="price">Rs.499</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="./asserts/p22.webp" alt="Fertilizer 22">
+        <h3>Gibrax Phytozyme(Seaweed) </h3>
+        <div class="price">Rs.840</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+        <img src="./asserts/P23.webp" alt="Pesticide 1">
+        <h3>Neem Khali Cake (Organic) </h3>
+        <div class="price">RS.189</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+        <img src="./asserts/p24.webp" alt="Pesticide 2">
+        <h3>Smart Plant Protector(pest Controller) </h3>
+        <div class="price">Rs.599</div>
+        <button>Add to Cart</button>
+    </div>
+     <!-- Product 1 -->
+     <div class="product-card">
+        <img src="./asserts/p25.webp" alt="Fertilizer 1">
+        <h3>Pyramid (Acetamaprid 20% SP) </h3>
+        <div class="price">Rs.250</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="./asserts/p26.webp" alt="Fertilizer 2">
+        <h3>
+            3-in-1 Natural Pest Control-katayani </h3>
+        <div class="price">Rs.369</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product-card">
+        <img src="./asserts/p27.webp" alt="Pesticide 1">
+        <h3>Cold Pressed Water-Soluble Neem Oil EC </h3>
+        <div class="price">Rs.399</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product-card">
+        <img src="./asserts/p28.webp" alt="Pesticide 2">
+        <h3>
+            Commander (Emamectin Benzoate) </h3>
+        <div class="price">Rs.400</div>
+        <button>Add to Cart</button>
+    </div>
+    <div class="product-card">
+        <img src="./asserts/p29.webp" alt="Fertilizer 1">
+        <h3>Neem Oil Pest Repellent Spray </h3>
+        <div class="price">Rs.289</div>
+        <button>Add to Cart</button>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product-card">
+        <img src="./asserts/p30.webp" alt="Fertilizer 2">
+        <h3>
+            Magic FungiX Organic Fungus Controller (200 Grams) </h3>
+        <div class="price">Rs.380</div>
+        <button>Add to Cart</button>
+    </div>
+
+    
+    <!-- Add more products as needed -->
+</div>
+
+<script>
+    // Sticky Header Scroll Effect
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+</script>
+
+</body>
+</html>

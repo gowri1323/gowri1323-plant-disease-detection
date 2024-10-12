@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service - GreenGuard</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your stylesheet -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #eef5e9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Sticky Header (from Blog Page) */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(60, 124, 70, 0.8);
+            color: white;
+            padding: 10px 0;
+            z-index: 1000;
+            width: 100%;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .header.scrolled {
+            background-color: #3c7c46;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px; /* Added padding for better spacing */
+            flex-wrap: wrap; /* Allow wrapping for smaller screens */
+        }
+
+        .header a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            transition: color 0.3s ease;
+        }
+
+        .header a:hover {
+            color: #a1d3b8;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background-color: #c0e4c3;
+            padding: 20px 20px;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            color: #3c7c46;
+            font-size: 36px;
+        }
+
+        .hero-section p {
+            color: #5c9d6b;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        /* Services Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+            padding: 40px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .service-card img {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 15px;
+        }
+
+        .service-card h3 {
+            color: #28a745;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .service-card button {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Added transition for button */
+        }
+
+        .service-card button:hover {
+            background-color: #3c7c46;
+        }
+
+       
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 28px; /* Smaller font size for h1 */
+            }
+
+            .hero-section p {
+                font-size: 16px; /* Smaller font size for p */
+            }
+
+            .services {
+                padding: 20px; /* Reduced padding for services section */
+            }
+
+            .service-card {
+                padding: 20px; /* Reduced padding for service cards */
+            }
+
+            .service-card h3 {
+                font-size: 20px; /* Smaller font size for service card titles */
+            }
+
+            .service-card p {
+                font-size: 14px; /* Smaller font size for service card descriptions */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .header-container {
+                flex-direction: column; /* Stack links vertically on small screens */
+                align-items: flex-start; /* Align links to the left */
+            }
+
+            .header a {
+                padding: 10px; /* Reduce padding for smaller screens */
+                width: 100%; /* Make links full width */
+                text-align: center; /* Center the text */
+            }
+
+            .hero-section h1 {
+                font-size: 24px; /* Even smaller font size for h1 */
+            }
+
+            .hero-section p {
+                font-size: 14px; /* Even smaller font size for p */
+            }
+
+            .service-card img {
+                width: 50px; /* Smaller images for service cards */
+                height: 50px;
+            }
+
+            .service-card h3 {
+                font-size: 18px; /* Smaller font size for service card titles */
+            }
+
+            .service-card p {
+                font-size: 12px; /* Smaller font size for service card descriptions */
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header Section (from Blog Page) -->
+<header class="header" id="header">
+    <div class="header-container">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="service.html"> Help Centre</a>
+        <a href="blog.html">Blog</a>
+        <a href="login.html">Login</a>
+    </div>
+</header>
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Our Services</h1>
+    <p>Explore the advanced AI-driven solutions that GreenGuard offers to ensure plant health and growth.</p>
+</div>
+
+<!-- Services Section -->
+<div class="services">
+    <!-- Service Card 1 -->
+    <div class="service-card">
+        <img src="./asserts/image diagonsis.jpg" alt="Plant Disease Diagnosis">
+        <h3>Plant Disease Diagnosis</h3>
+        <p>Accurately detect plant diseases using our AI-powered diagnostic tools.</p>
+        <button onclick="location.href='diagnosis.html'">view</button>
+    </div>
+
+    <!-- Service Card 2 -->
+    <div class="service-card">
+        <img src="./asserts/crop advisor.jpg" alt="Pest Control Advice">
+        <h3>Crop Advisor</h3>
+        <p>Receive expert advice on managing pests that may harm your plants.</p>
+        <button onclick="location.href='pest-control.html'">view</button>
+    </div>
+
+    
+    
+</div>
+
+ 
+
+<!-- Sticky Header Scroll Effect (from Blog Page) -->
+<script>
+    window.addEventListener('scroll', function() {
+        const header = document.getElementById('header');
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });

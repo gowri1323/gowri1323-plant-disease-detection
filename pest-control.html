@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+</head>
+<body>
+   <head>
+       <script src="https://kit.fontawesome.com/a24879a822.js" crossorigin="anonymous"></script>
+     </head>
+     
+     <body>
+       
+     <body>
+       <a href=""><i class="fa-solid fa-phone"></i>555-252</a>
+       <a href=""><i class="fa-brands fa-facebook"></i>GhostHunter2</a>
+       <a href=""><i class="fa-brands fa-instagram"></i>GhostHunter</a>
+       <a href=""><i class="fa-brands fa-linkedin"></i>GhostHunterJon</a>
+       <a href=""><i class="fa-brands fa-github"></i>Ghost1nDaShell</a>
+        <a href=""><i class="fa-brands fa-tiktok"></i>JonHuntsGhosts</a>
+       <a href=""><i class="fa-brands fa-discord"></i>JonHuntsGhosts</a>
+       <a href=""><i class="fa-brands fa-youtube"></i>GostPost</a>
+       <a href=""><i class="fa-brands fa-codepen"></i>JonHuntsGhosts</a>
+       <a href=""><i class="fa-brands fa-free-code-camp"></i>GhostHunterJohn</a>
+       <a href=""><i class="fa-brands fa-x-twitter"></i>GhostHunterJohn</a>
+       <img id="center" src="https://raw.githubusercontent.com/Philip-Walsh/codepens/main/assets/ghost-hunter.png"></img>
+     
+     </body>
+     <style>
+       @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+ --main-bg:#0c1821;
+ --bg-color: #03346e;
+ --text-color:#CCC9DC;
+}
+
+body {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ height: 100vh;
+ width:80vw;
+ margin: 0;
+ position: relative;
+ background-color:var(--main-bg);
+ 
+ font-family: "Inter", sans-serif;
+ font-optical-sizing: auto;
+ font-weight: 600;
+ font-style: normal;
+ overflow:hidden;
+}
+
+a {
+ transition: transform 0.3s;
+ position: absolute;
+ border:1px solid var(--text-color);
+ padding:.5em;
+ border-radius:.5em;
+ display:flex;
+ place-content:space-evenly;
+ place-items: baseline;
+ gap:.1em;
+ text-decoration:none;
+ color:var(--text-color);
+ background-color:var(--main-bg);
+ text-shadow: var(--text-color) 1px 0 5px;
+ 
+ transition: 0.2s ease-in-out;
+  transform: scale(.8);
+ 
+}
+i {
+ padding-right:.5em;
+}
+a:hover {
+ transform: scale(2);
+ z-index:5;
+}
+a:has(+ *:hover),
+a:hover + * {
+  transform: scale(1.5);
+}
+a:has(+ *+ *:hover),
+a:hover + *+ * {
+  transform: scale(1);
+}
+
+#center {
+ width:15em;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-20%, -50%);
+ z-index: -1;
+}
+
+     </style>
+     
+     
+</body>
+
+<script>
+   const links = document.querySelectorAll('body a');
+const centerImage = document.getElementById('center');
+
+function positionLinks() {
+ const angleStep = (2 * Math.PI) / links.length;
+ const radius = 300;
+ links.forEach((link, index) => {
+   const angle = angleStep * index;
+   const x = Math.cos(angle) * radius;
+   const y = Math.sin(angle) * radius;
+
+   link.style.left = calc(50% + ${x}px);
+   link.style.top = calc(50% + ${y}px);
+ });
+}
+
+positionLinks();
+
+</script>
+</html>
